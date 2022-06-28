@@ -18,18 +18,19 @@ import java.util.logging.Logger;
 public abstract class DBContext<T> {
 
     protected Connection connection;
-
-    public DBContext() {
+    
+          public DBContext() {
         try {
             String user = "tuyen2k1";
-            String pass = "12345";
-            String url = "jdbc:sqlserver://DESKTOP-RB62PPH\\TUYEN2k1:1433;databaseName=assignment";
+            String pass = "123456";
+            String url = "jdbc:sqlserver://DESKTOP-RB62PPH\\TUYEN2K1:1433;databaseName=Attendance_Assignment_PRJ301";
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             connection = DriverManager.getConnection(url, user, pass);
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
 
     public abstract ArrayList<T> list();
 
