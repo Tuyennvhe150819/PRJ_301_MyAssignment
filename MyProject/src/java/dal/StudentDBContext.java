@@ -19,26 +19,29 @@ import model.Student;
  * @author TGDD
  */
 public class StudentDBContext extends DBContext<Student> {
-
-    @Override
-    public ArrayList<Student> list() {
+ 
+        public ArrayList<Student> getStudent() {
         ArrayList<Student> students = new ArrayList<>();
         try {
-            String sql = "SELECT id,code,displayName FROM Student";
-            PreparedStatement stm = connection.prepareStatement(sql);
+            String sql = "select id, displayname, code from Student";
+            PreparedStatement stm = connection.prepareCall(sql);
             ResultSet rs = stm.executeQuery();
-            while(rs.next())
-            {
-                Student s = new Student();
-                s.setId(rs.getInt("id"));
-                s.setCode(rs.getString("code"));
-                s.setName(rs.getString("displayName"));          
-                students.add(s);
+            while(rs.next()) {
+                Student stu = new Student();
+                stu.setId(rs.getInt("id"));
+                stu.setName(rs.getString("displayname"));
+                stu.setCode(rs.getString("code"));
+                students.add(stu);
             }
         } catch (SQLException ex) {
             Logger.getLogger(StudentDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
         return students;
+    }
+
+    @Override
+    public ArrayList<Student> list() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
@@ -60,5 +63,5 @@ public class StudentDBContext extends DBContext<Student> {
     public void delete(Student model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
-}
+      
+     }

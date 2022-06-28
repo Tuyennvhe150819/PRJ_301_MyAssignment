@@ -63,9 +63,10 @@ public class listStudent extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            ArrayList<Student> lists = new StudentDBContext().list();
-            request.setAttribute("listItem", lists);
-           request.getRequestDispatcher("../view/list.jsp").forward(request, response);
+            StudentDBContext sdb = new StudentDBContext();
+            ArrayList<Student> students =  sdb.getStudent();
+            request.setAttribute("listItem", students);
+           request.getRequestDispatcher("view/list.jsp").forward(request, response);
            
     }
 

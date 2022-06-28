@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author TGDD
@@ -12,7 +14,16 @@ public class Student {
     private String name;
     private int id;
     private String code;
+    ArrayList<Student> students = new ArrayList<>();
 
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(ArrayList<Student> students) {
+        this.students = students;
+    }
+    
     public String getName() {
         return name;
     }

@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form>
+        <form action="listStudent" method="GET">
              <table border="1">
                 <thead>
                     <tr>
@@ -22,13 +22,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <c:forEach items="${requestScope.listItem}" var = "S">
+                    <c:forEach items="${requestScope.listItem}" var = "l">
                     <tr>
-                        <td>${S.id}</td>
-                        <td>${S.code}</td>
-                        <td>${S.name}</td>
+                        <td>${l.id}</td>
+                        <td>${l.code}</td>
+                        <td>${l.name}</td>
                     </tr>
-                    </c:forEach>>
+                    </c:forEach>
                 </tbody>
             </table>
         </form>
