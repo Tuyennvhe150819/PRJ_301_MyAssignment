@@ -18,41 +18,47 @@ import model.Student;
  *
  * @author TGDD
  */
-public class StudentDBContext {
+public class StudentDBContext extends DBContext<Student> {
 
-     public static ArrayList<Student> list() throws ClassNotFoundException, SQLException {
-        Connection conn=Connect.jdbcConnection();
-        Statement stm;
-        stm = conn.createStatement();
-        String sql = "Select * From Student";
-        ResultSet rst;
-        rst = stm.executeQuery(sql);
-        ArrayList<Student> studentList = new ArrayList<>();
-        while (rst.next()) {
-            Student student = new Student(Integer.valueOf(rst.getString("id")), rst.getString("code"),rst.getString("displayname"));
-           System.out.println(rst.getString("id") + " " + rst.getString("name") + " " + rst.getString("code"));
-            studentList.add(student);
+    @Override
+    public ArrayList<Student> list() {
+        ArrayList<Student> students = new ArrayList<>();
+        try {
+            String sql = "SELECT id,code,displayName FROM Student";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            ResultSet rs = stm.executeQuery();
+            while(rs.next())
+            {
+                Student s = new Student();
+                s.setId(rs.getInt("id"));
+                s.setCode(rs.getString("code"));
+                s.setName(rs.getString("displayName"));          
+                students.add(s);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(StudentDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return studentList;
+        return students;
     }
-//    public ArrayList<Student> list() {
-//        ArrayList<Student> students = new ArrayList<>();
-//        try {
-//            String sql = "SELECT id,code,displayName FROM Student";
-//            PreparedStatement stm = connection.prepareStatement(sql);
-//            ResultSet rs = stm.executeQuery();
-//            while(rs.next())
-//            {
-//                Student s = new Student();
-//                s.setId(rs.getInt("id"));
-//                s.setCode(rs.getString("code"));
-//                s.setName(rs.getString("displayName"));          
-//                students.add(s);
-//            }
-//        } catch (SQLException ex) {
-//            Logger.getLogger(StudentDBContext.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        return students;
-//    }
+
+    @Override
+    public Student get(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void insert(Student model) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void update(Student model) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void delete(Student model) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
 }

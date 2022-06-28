@@ -13,13 +13,6 @@ public class Student {
     private int id;
     private String code;
 
-    public Student(int id,String code, String name) {
-        this.name = name;
-        this.id = id;
-        this.code = code;
-    }
-    
-
     public String getName() {
         return name;
     }

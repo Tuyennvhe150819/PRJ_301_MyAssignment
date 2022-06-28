@@ -63,23 +63,10 @@ public class listStudent extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            //        ArrayList<Student> ListStudent = new StudentDBContext().list();
-//        System.out.println(ListStudent);
-//        request.setAttribute("ListStudent", ListStudent);
-//        request.getRequestDispatcher("../view/list.jsp").forward(request, response);
-            ArrayList<Student> lists = StudentDBContext.list();
+            ArrayList<Student> lists = new StudentDBContext().list();
             request.setAttribute("listItem", lists);
-//            ServletContext sc = getServletContext();
-            String url = "../view/list.jsp";
-            RequestDispatcher dispatcher
-                    = getServletContext().getRequestDispatcher(url);
-            dispatcher.forward(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(listStudent.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(listStudent.class.getName()).log(Level.SEVERE, null, ex);
-        }
+           request.getRequestDispatcher("../view/list.jsp").forward(request, response);
+           
     }
 
     /**

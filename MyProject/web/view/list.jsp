@@ -22,7 +22,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <c:forEach items="${requestScope.ListStudent}" var = "S">
+                    <c:forEach items="${requestScope.listItem}" var = "S">
                     <tr>
                         <td>${S.id}</td>
                         <td>${S.code}</td>
