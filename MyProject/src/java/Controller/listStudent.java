@@ -66,8 +66,7 @@ public class listStudent extends HttpServlet {
             StudentDBContext sdb = new StudentDBContext();
             ArrayList<Student> students =  sdb.getStudent();
             request.setAttribute("listItem", students);
-           request.getRequestDispatcher("view/list.jsp").forward(request, response);
-           
+           request.getRequestDispatcher("view/list.jsp").forward(request, response);         
     }
 
     /**
