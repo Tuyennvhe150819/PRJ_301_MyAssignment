@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author TGDD
+ * @author tuyenvhe150819
  */
 public abstract class DBContext<T> {
 

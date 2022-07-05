@@ -4,49 +4,39 @@
  */
 package model;
 
-public class Student {
+/**
+ *
+ * @author tuyennvhe150819
+ */
+public class Instructor {
     private int id;
     private String email;
     private String password;
     private String displayName;
     private String code;
-    private String imageUrl ;
+    private String imageUrl;
 
-    public Student() {
+    public Instructor() {
     }
 
-    public Student(int id,String email, String password, String displayName) {
+    public Instructor(int id,String email, String password, String displayName) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.displayName = displayName;
     }
+
+    public Instructor(int id, String email, String password, String displayName, String code, String imageUrl) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.displayName = displayName;
+        this.code = code;
+        this.imageUrl = imageUrl;
+    }
+  
     
-    public Student(int id, String email, String password, String displayName, String code, String imageUrl) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.displayName = displayName;
-        this.code = code;
-        this.imageUrl = imageUrl;
-
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
+    
 
 
     public String getEmail() {
@@ -81,7 +71,22 @@ public class Student {
     public void setId(int id) {
         this.id = id;
     }
-    
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
     
     
 }
