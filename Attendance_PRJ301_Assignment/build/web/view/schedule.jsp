@@ -1,6 +1,6 @@
 <%-- 
     Document   : schedule
-    Created on : Jul 9, 2022, 2:22:22 AM
+    Created on : Jul 7, 2022, 2:22:22 AM
     Author     : TGDD
 --%>
 
@@ -11,9 +11,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link href="../css/allmin.css" rel="stylesheet" type="text/css"/>
-        <link href="../css/bootstrap.min_1.css" rel="stylesheet" type="text/css"/>
-        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+           <script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
+        <link href="css/all.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap.min.css.css" rel="stylesheet" type="text/css"/>
+        <link href="css/weeklytimetable.css" rel="stylesheet" type="text/css"/>
       
     </head>   
     <body>

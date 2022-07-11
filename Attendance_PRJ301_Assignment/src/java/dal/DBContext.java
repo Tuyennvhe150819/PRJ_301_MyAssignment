@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  *
  * @author TGDD
  */
-public abstract class DBContext<T> {
+public abstract class DBContext {
 
     protected Connection connection;
     
@@ -31,14 +31,4 @@ public abstract class DBContext<T> {
         }
     }
     
-
-    public abstract ArrayList<T> list();
-
-    public abstract T get(int id);
-
-    public abstract void insert(T model);
-
-    public abstract void update(T model);
-
-    public abstract void delete(T model);
 }

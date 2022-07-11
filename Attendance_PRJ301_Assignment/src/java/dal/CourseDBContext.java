@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package dal;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,10 +10,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Course;
 
-
-public class CourseDBContext extends DBContext{
-
-    Course getCourseById(int id) {
+public class CourseDBContext extends DBContext {
+     Course getCourseById(int id) {
         try {
             String sql = "SELECT [id]\n"
                     + "      ,[name]\n"
