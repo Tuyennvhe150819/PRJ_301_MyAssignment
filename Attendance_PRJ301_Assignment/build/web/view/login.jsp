@@ -11,10 +11,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
-        <link href="css/all.min.css" rel="stylesheet" type="text/css"/>
-        <link href="css/bootstrap.min.css.css" rel="stylesheet" type="text/css"/>
-        <link href="css/loginstyle.css" rel="stylesheet" type="text/css"/>
-        <script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
+        <link href="../css/all.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/bootstrap.min.css.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/loginstyle.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <div class="container">
