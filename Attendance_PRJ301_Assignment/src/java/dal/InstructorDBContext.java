@@ -1,12 +1,19 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package dal;
 
+/**
+ *
+ * @author TGDD
+ */
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import model.Campus;
 import model.Instructor;
 
 public class InstructorDBContext extends DBContext {
@@ -21,13 +28,17 @@ public class InstructorDBContext extends DBContext {
                     + "                       ,[imageUrl]\n"
                     + "                       ,i.[cid] as cid,c.name as cname\n"
                     + "                            FROM [dbo].[Instructor] i inner join Campus c on i.cid = c.id "
-                    + "                           ";
+                    + "                            where email =? and [password] = ? and i.cid = ?";
 
             PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, email);
+            ps.setString(2, password);
+            ps.setInt(3, cid);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                   Instructor instructor = new Instructor(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
-                        rs.getString(5), rs.getString(6));
+                Campus c = new Campus(rs.getInt(7), rs.getString(8));
+                Instructor instructor = new Instructor(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
+                        rs.getString(5), rs.getString(6), c);
                 return instructor;
             }
         } catch (SQLException ex) {
@@ -60,9 +71,9 @@ public class InstructorDBContext extends DBContext {
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-               
+                Campus c = new CampusDBContext().getCampusByCid(rs.getInt(5));
                 Instructor i = new Instructor(rs.getInt(1), rs.getString(2), rs.getString(3),
-                        rs.getString(4), rs.getString(6), rs.getString(7));
+                        rs.getString(4), rs.getString(6), rs.getString(7), c);
                 return i;
             }
         } catch (SQLException ex) {

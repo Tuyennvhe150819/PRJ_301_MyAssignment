@@ -15,6 +15,8 @@ public class Student {
     private String displayName;
     private String code;
     private String imageUrl ;
+    private Campus campus;
+    private Student_Lession student_Lession;
 
     public Student() {
     }
@@ -25,15 +27,28 @@ public class Student {
         this.password = password;
         this.displayName = displayName;
     }
-    
-    public Student(int id, String email, String password, String displayName, String code, String imageUrl) {
+
+    public Student(int id, String email, String password, String displayName, String code, String imageUrl, Campus campus, Student_Lession student_Lession) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.displayName = displayName;
         this.code = code;
         this.imageUrl = imageUrl;
-
+        this.campus = campus;
+        this.student_Lession = student_Lession;
+    }
+    
+    
+    
+    public Student(int id, String email, String password, String displayName, String code, String imageUrl, Campus campus) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.displayName = displayName;
+        this.code = code;
+        this.imageUrl = imageUrl;
+        this.campus = campus;
     }
 
     public String getCode() {
@@ -78,12 +93,28 @@ public class Student {
         this.displayName = displayName;
     }
 
+    public Campus getCampus() {
+        return campus;
+    }
+
+    public void setCampus(Campus campus) {
+        this.campus = campus;
+    }
+
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Student_Lession getStudent_Lession() {
+        return student_Lession;
+    }
+
+    public void setStudent_Lession(Student_Lession student_Lession) {
+        this.student_Lession = student_Lession;
     }
     
     

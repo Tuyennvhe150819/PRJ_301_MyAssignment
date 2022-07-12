@@ -15,6 +15,7 @@ public class Instructor {
     private String displayName;
     private String code;
     private String imageUrl;
+    private Campus campus;
 
     public Instructor() {
     }
@@ -26,14 +27,19 @@ public class Instructor {
         this.displayName = displayName;
     }
 
-    public Instructor(int id, String email, String password, String displayName, String code, String imageUrl) {
+    public Instructor(int id, String email, String password, String displayName, String code, String imageUrl, Campus campus) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.displayName = displayName;
         this.code = code;
         this.imageUrl = imageUrl;
+        this.campus = campus;
     }
+  
+    
+    
+
 
     public String getEmail() {
         return email;
@@ -58,6 +64,14 @@ public class Instructor {
 
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
+    }
+
+    public Campus getCampus() {
+        return campus;
+    }
+
+    public void setCampus(Campus campus) {
+        this.campus = campus;
     }
 
     public int getId() {

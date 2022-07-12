@@ -8,26 +8,16 @@ package model;
  *
  * @author TGDD
  */
-public class TimeSlot {
+public class Campus {
     private int id;
     private String name;
-    private String start;
-    private String end;
 
-    public TimeSlot() {
+    public Campus() {
     }
 
-    public TimeSlot(int id, String name) {
+    public Campus(int id, String name) {
         this.id = id;
         this.name = name;
-    }
-
-    
-    public TimeSlot(int id, String name, String start, String end) {
-        this.id = id;
-        this.name = name;
-        this.start = start;
-        this.end = end;
     }
 
     public int getId() {
@@ -44,22 +34,6 @@ public class TimeSlot {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getStart() {
-        return start;
-    }
-
-    public void setStart(String start) {
-        this.start = start;
-    }
-
-    public String getEnd() {
-        return end;
-    }
-
-    public void setEnd(String end) {
-        this.end = end;
     }
     
     
