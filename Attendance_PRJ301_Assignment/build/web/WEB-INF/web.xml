@@ -4,9 +4,57 @@
         <servlet-name>LoginController</servlet-name>
         <servlet-class>Controller.LoginController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>HomeController</servlet-name>
+        <servlet-class>Controller.HomeController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ScheduleController</servlet-name>
+        <servlet-class>Controller.ScheduleController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TakeAttendanceController</servlet-name>
+        <servlet-class>Controller.TakeAttendanceController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditAttendance</servlet-name>
+        <servlet-class>Controller.EditAttendance</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewAttendanceController</servlet-name>
+        <servlet-class>Controller.ViewAttendanceController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewStudentController</servlet-name>
+        <servlet-class>Controller.ViewStudentController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HomeController</servlet-name>
+        <url-pattern>/Home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ScheduleController</servlet-name>
+        <url-pattern>/schedule</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TakeAttendanceController</servlet-name>
+        <url-pattern>/take-attendance</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditAttendance</servlet-name>
+        <url-pattern>/edit-attendance</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewAttendanceController</servlet-name>
+        <url-pattern>/view-attendance</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewStudentController</servlet-name>
+        <url-pattern>/view-student</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
