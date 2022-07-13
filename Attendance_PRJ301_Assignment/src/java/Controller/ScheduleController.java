@@ -89,7 +89,7 @@ public class ScheduleController extends HttpServlet {
             request.setAttribute("thursday", thursday);
             request.setAttribute("friday", friday);
             request.setAttribute("saturday", endDate_raw);
-            request.getRequestDispatcher("view/home/schedule.jsp").forward(request, response);
+            request.getRequestDispatcher("view/schedule.jsp").forward(request, response);
         } catch (ParseException ex) {
             Logger.getLogger(ScheduleController.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -53,7 +53,7 @@ public class ViewAttendanceController extends HttpServlet {
         request.setAttribute("students", students);
         request.setAttribute("lession", lession);
         request.setAttribute("day", day);
-        request.getRequestDispatcher("view/home/view-attendance.jsp").forward(request, response);
+        request.getRequestDispatcher("view/view-attendance.jsp").forward(request, response);
     }
 
     /**

@@ -51,7 +51,7 @@ public class TakeAttendanceController extends HttpServlet {
         request.setAttribute("lession", lession);
         request.setAttribute("lid", lid);
         request.setAttribute("students", students);
-        request.getRequestDispatcher("/view/home/take-attendance.jsp").forward(request, response);
+        request.getRequestDispatcher("../view/take-attendance.jsp").forward(request, response);
 
     }
 

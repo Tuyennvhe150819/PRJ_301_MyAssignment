@@ -8,7 +8,6 @@ package dal;
  *
  * @author TGDD
  */
-import jakarta.servlet.jsp.jstl.sql.Result;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

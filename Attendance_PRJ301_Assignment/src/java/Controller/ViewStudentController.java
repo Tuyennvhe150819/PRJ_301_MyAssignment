@@ -38,7 +38,7 @@ public class ViewStudentController extends HttpServlet {
     throws ServletException, IOException {
         ArrayList<Campus> cps = new CampusDBContext().getAllCampuses();
         request.setAttribute("cps", cps);
-        request.getRequestDispatcher("/view/home/view-student.jsp").forward(request, response);
+        request.getRequestDispatcher("../view/view-student.jsp").forward(request, response);
     } 
 
     /** 
