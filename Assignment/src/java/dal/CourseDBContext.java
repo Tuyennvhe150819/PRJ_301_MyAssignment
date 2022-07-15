@@ -4,31 +4,29 @@
  */
 package dal;
 
-/**
- *
- * @author TGDD
- */
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.Campus;
+import model.Course;
 import model.Instructor;
 
-public class InstructorDBContext extends DBContext {
 
+public class CourseDBContext extends DBContext{
 
-    public Instructor getInstructorByCampus(int campus) {
+    Course getCourseById(int id) {
         try {
-            String sql = "select * from Instructor where cid = ?";
+            String sql = "SELECT [id]\n"
+                    + "      ,[name]\n"
+                    + "      ,[code]\n"
+                    + "  FROM [dbo].[Course] where id = ?";
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setInt(1, campus);
+            ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                Instructor i = new Instructor(rs.getInt(1),
-                        rs.getString(2), rs.getString(3), rs.getString(4));
-                return i;
+                Course c = new Course(rs.getInt(1), rs.getString(2), rs.getString(3));
+                return c ;
             }
         } catch (SQLException ex) {
             Logger.getLogger(StudentDBContext.class.getName()).log(Level.SEVERE, null, ex);

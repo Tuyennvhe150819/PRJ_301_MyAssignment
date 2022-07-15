@@ -2,8 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
+package controller;
 
-package Controller;
 import dal.LessionDBContext;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
@@ -89,7 +89,7 @@ public class ScheduleController extends HttpServlet {
             request.setAttribute("thursday", thursday);
             request.setAttribute("friday", friday);
             request.setAttribute("saturday", endDate_raw);
-            request.getRequestDispatcher("../view/schedule.jsp").forward(request, response);
+            request.getRequestDispatcher("view/home/schedule.jsp").forward(request, response);
         } catch (ParseException ex) {
             Logger.getLogger(ScheduleController.class.getName()).log(Level.SEVERE, null, ex);
         }

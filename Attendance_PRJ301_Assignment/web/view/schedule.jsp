@@ -26,9 +26,9 @@
                 </div>
                 <div class="col-md-4" class="text-center">
                     Campus:<select class="mb-2" disabled name="campusId">
-                        <option >${sessionScope.instructor.campus.name}</option>
+                        <option >FU-Hoa Lac</option>
                     </select><br/>
-                    Lecture: <input type="text" disabled value="${sessionScope.instructor.code}" />
+                    Lecture: <input type="text" disabled value="sonnt5" />
                 </div>
                 <div class="col-md-4"></div>
             </div>
