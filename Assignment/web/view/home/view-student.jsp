@@ -6,37 +6,30 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+
     </head>
     <body>
         <form action="view-student" method="get">
-          Group<select name="">
-                <option></option>
-                <option></option>
-            </select>
-          Course<select name="">
-              <option></option>
-              <option></option>
-          </select>
-            
-        </form>
-        <table class="table table-borderless">       
-             <c:if test="${requestScope.students ne null}">
-            <table>
-                <tr>
-                    <td>id</td>
-                    <td>code</td>
-                    <td>name</td>
-                    <td>imageUrl</td>
-                </tr>
-                <c:forEach items="${requestScope.students}" var="s">
+            <table class="table no-wrap user-table mb-0">
+                <thead>
                     <tr>
-                        <td>${s.id}</td>
-                        <td>${s.code}</td>
-                        <td>${s.displayName}</td>
-                        <td>${s.imageUrl}</td>   
+                        <th scope="col" class="border-0 text-uppercase font-medium pl-4">ID</th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Code</th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Name</th>                                                                  
+                        <th scope="col" class="border-0 text-uppercase font-medium">Image</th>
                     </tr>
-                </c:forEach>
+                </thead>
+                <tbody>
+                    <c:forEach items="${students}" var="S">    
+                        <tr>
+                            <td>${S.id}</td>
+                            <td>${S.code}</td>
+                            <td>${S.displayName}</td>
+                            <td>${S.imageUrl}</td>
+                        </tr>
+
+                    </c:forEach>
+                </tbody>
             </table>
-        </c:if>
     </body>
 </html>
