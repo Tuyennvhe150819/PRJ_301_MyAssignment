@@ -105,5 +105,25 @@ public class StudentDBContext extends DBContext {
         }
         return null;
     }
+     public ArrayList<Student> getAllStudentByInstrucsionId(int iid) {
+        ArrayList<Student> list = new ArrayList<>();
+        try {
+            String sql = "select Student.* from [Group] join Student_Group on [Group].id = Student_Group.gid\n"
+                    + "  join Student on Student.id = Student_Group.suid where  [Group].iid = ?";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setInt(1, iid);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Campus campus = new CampusDBContext().getCampusByCid(rs.getInt(5));
+                Student s = new Student(rs.getInt(1),
+                        rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(6), rs.getString(7), campus);
+                list.add(s);
+            }
+            return list;
+        } catch (SQLException ex) {
+            Logger.getLogger(StudentDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
 
 }

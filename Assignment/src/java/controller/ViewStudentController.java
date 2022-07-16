@@ -6,6 +6,8 @@
 package controller;
 
 import dal.CampusDBContext;
+import dal.LessionDBContext;
+import dal.StudentDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -14,6 +16,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import model.Campus;
+import model.Lession;
+import model.Student;
 
 public class ViewStudentController extends HttpServlet {
    
@@ -36,8 +40,9 @@ public class ViewStudentController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        ArrayList<Campus> cps = new CampusDBContext().getAllCampuses();
-        request.setAttribute("cps", cps);
+         StudentDBContext db = new StudentDBContext();
+        ArrayList<Student> students =   db.getAllStudentByInstrucsionId(1);   
+        request.setAttribute("students", students);
         request.getRequestDispatcher("/view/home/view-student.jsp").forward(request, response);
     } 
 

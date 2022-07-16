@@ -8,24 +8,24 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <table class="table table-borderless">
-            <thead>
+        <table class="table table-borderless">       
+             <c:if test="${requestScope.students ne null}">
+            <table>
                 <tr>
-                    <th scope="col">Campus</th>
+                    <td>id</td>
+                    <td>code</td>
+                    <td>name</td>
+                    <td>imageUrl</td>
                 </tr>
-            </thead>
-            <tbody>
-                <c:forEach items="${requestScope.cps}" var="cp">
-                <tr>
-                    <th onclick="campus()" scope="row">${cp.name}</th>
-                </tr>
+                <c:forEach items="${requestScope.students}" var="s">
+                    <tr>
+                        <td>${s.id}</td>
+                        <td>${s.code}</td>
+                        <td>${s.displayName}</td>
+                        <td>${s.imageUrl}</td>   
+                    </tr>
                 </c:forEach>
-            </tbody>
-        </table>
-        <script type="text/javascript">
-            function campus() {
-                
-            }
-        </script>
+            </table>
+        </c:if>
     </body>
 </html>
