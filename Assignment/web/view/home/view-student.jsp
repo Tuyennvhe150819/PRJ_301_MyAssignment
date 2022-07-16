@@ -8,6 +8,17 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <form action="view-student" method="get">
+          Group<select name="">
+                <option></option>
+                <option></option>
+            </select>
+          Course<select name="">
+              <option></option>
+              <option></option>
+          </select>
+            
+        </form>
         <table class="table table-borderless">       
              <c:if test="${requestScope.students ne null}">
             <table>

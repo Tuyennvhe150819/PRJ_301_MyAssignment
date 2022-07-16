@@ -108,8 +108,5 @@ public class Student {
 
     public void setStudent_Lession(Student_Lession student_Lession) {
         this.student_Lession = student_Lession;
-    }
-    
-    
-    
+    }   
 }

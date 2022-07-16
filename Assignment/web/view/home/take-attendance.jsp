@@ -9,6 +9,17 @@
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
         <link href="css/take-attendance.css" rel="stylesheet" type="text/css"/>
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <img src="../../images/1.jpg" alt=""/>
+    <img src="../../images/10.jpg" alt=""/>
+    <img src="../../images/11.jpg" alt=""/>
+    <img src="../../images/2.jpg" alt=""/>
+    <img src="../../images/3.jpg" alt=""/>
+    <img src="../../images/4.jpg" alt=""/>
+    <img src="../../images/5.jpg" alt=""/>
+    <img src="../../images/6.jpg" alt=""/>
+    <img src="../../images/7.jpg" alt=""/>
+    <img src="../../images/8.jpg" alt=""/>
+    <img src="../../images/9.jpg" alt=""/>
     </head>
     <body>
 
@@ -64,13 +75,13 @@
                                                     <input type="text" name="comment-${S.id}" placeholder="comment ...">
                                                 </td>
                                                 <td>
-                                                    <span class="text-muted"><a href="#">Show image</a></span><br>
+                                                    <span class="text-muted"><a href="#">${S.imageUrl}</a></span><br>
                                                 </td>
                                             </tr>
                                         </c:forEach>
                                     </tbody>
                                 </table>
-                                <input class="float-right btn-outline-success" style="margin-right: 500px; padding: 0 16px" type="submit" value="Add" />
+                                <input class="float-right btn-outline-success" style="margin-right: 500px; padding: 0 16px" type="submit" value="Save" />
                             </form>
                         </div>
                     </div>
