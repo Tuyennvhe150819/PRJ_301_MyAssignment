@@ -1,4 +1,3 @@
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -52,7 +51,7 @@
                                                         </label>
                                                         &nbsp;
                                                         <label>
-                                                            <input type="radio" name="${S.id}" value="present">
+                                                            <input checked type="radio" name="${S.id}" value="present">
                                                             present
                                                         </label>
                                                     </fieldset>

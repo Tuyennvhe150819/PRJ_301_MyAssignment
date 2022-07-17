@@ -12,14 +12,10 @@
 
         <div class="mx-auto w-25 align-items-center  list-group list-group-light">
             <h1>Attendance</h1>
-            <p onclick="myFunction()">
+            <p class="btn btn-danger" onclick="myFunction()">
                 Take attendance
             </p>
-            <a
-                href="#"
-                class="list-group-item list-group-item-action px-3 border-0"
-                >Dapibus ac facilisis in</a>
-            <p onclick="myFunction0()">
+            <p class="btn btn-danger" onclick="myFunction0()">
                 View student
             </p>
         </div>

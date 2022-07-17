@@ -8,7 +8,6 @@ import dal.StudentDBContext;
 import dal.CampusDBContext;
 import dal.InstructorDBContext;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;

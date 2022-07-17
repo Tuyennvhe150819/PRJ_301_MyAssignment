@@ -43,12 +43,13 @@ public class EditAttendanceController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        int lid = Integer.parseInt(request.getParameter("lid"));
+   int lid = Integer.parseInt(request.getParameter("lid"));
         Lession lession = new LessionDBContext().getLessionById(lid);
         ArrayList<Student> students = new StudentDBContext().getAllStudentByGroupId(lession.getGroup().getId());
         ArrayList<Student_Lession> sls = new Student_LessionDBContext().getAttendanceByLessionID(lid);
         request.setAttribute("lession", lession);
         request.setAttribute("sls", sls);
+        request.setAttribute("lid", lid);
         request.setAttribute("students", students);
         request.getRequestDispatcher("/view/home/edit-attendance.jsp").forward(request, response);
     } 
@@ -75,7 +76,7 @@ public class EditAttendanceController extends HttpServlet {
         String schedulePage = (String) request.getSession().getAttribute("schedulePage");
         if (schedulePage != null) {
             response.sendRedirect(schedulePage);
-        }else{
+        } else {
             response.sendRedirect("home");
         }
     }
