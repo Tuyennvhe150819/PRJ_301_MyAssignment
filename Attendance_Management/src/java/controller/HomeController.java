@@ -47,7 +47,7 @@ public class HomeController extends HttpServlet {
         }else{
             request.getRequestDispatcher("view/home/homeStudent.jsp").forward(request, response);
         }  
-    } 
+    }
 
     /** 
      * Handles the HTTP <code>POST</code> method.

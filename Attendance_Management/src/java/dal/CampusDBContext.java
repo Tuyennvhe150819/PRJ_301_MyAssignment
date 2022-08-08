@@ -4,7 +4,6 @@
  */
 package dal;
 
-import jakarta.servlet.jsp.jstl.sql.Result;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -31,7 +30,7 @@ public class CampusDBContext extends DBContext{
         return list;
     }
 
-    Campus getCampusByCid(int cid) {
+    public Campus getCampusByCid(int cid) {
         try {
             String sql = "select * from Campus where id=?";
             PreparedStatement ps = connection.prepareStatement(sql);

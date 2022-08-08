@@ -8,11 +8,13 @@ import dal.StudentDBContext;
 import dal.CampusDBContext;
 import dal.InstructorDBContext;
 import java.io.IOException;
+import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.util.ArrayList;
 import model.Student;
 import model.Campus;
@@ -61,6 +63,11 @@ public class LoginController extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
+        HttpSession session = request.getSession();
+        Instructor itemp = (Instructor) session.getAttribute("instructor");
+        if(itemp != null){
+            session.removeAttribute("instructor");
+        }
         ArrayList<Campus> listCampuses = new CampusDBContext().getAllCampuses();
 
         int campusID = Integer.parseInt(request.getParameter("campus"));

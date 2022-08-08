@@ -5,31 +5,67 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-
+        <title>View Student</title>
     </head>
     <body>
-        <form action="view-student" method="get">
-            <table class="table no-wrap user-table mb-0">
-                <thead>
+        <style>
+            table{
+                display:inline-table;
+            }
+            .active{
+                text-decoration: none;
+                font-size: large;
+                color: black;
+            }
+        </style>
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th scope="col">Campus</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="font-size: large;">${requestScope.campus.name}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th scope="col">Group</th>
+                </tr>
+            </thead>
+            <tbody>
+                <c:forEach items="${requestScope.grs}" var="gr">
                     <tr>
-                        <th scope="col" class="border-0 text-uppercase font-medium pl-4">ID</th>
-                        <th scope="col" class="border-0 text-uppercase font-medium">Code</th>
-                        <th scope="col" class="border-0 text-uppercase font-medium">Name</th>                                                                  
-                        <th scope="col" class="border-0 text-uppercase font-medium">Image</th>
+                        <td><a class="${gid == gr.id ?"active":""}" href="view-student?gid=${gr.id}">${gr.name}</a></td>
                     </tr>
-                </thead>
-                <tbody>
-                    <c:forEach items="${students}" var="S">    
-                        <tr>
-                            <td>${S.id}</td>
-                            <td>${S.code}</td>
-                            <td>${S.displayName}</td>
-                            <td>${S.imageUrl}</td>
-                        </tr>
-
-                    </c:forEach>
-                </tbody>
-            </table>
+                </c:forEach>
+            </tbody>
+        </table>
+        <%int count = 1;%>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Code</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                <c:forEach items="${students}" var="S">
+                    <tr>
+                        <th scope="row"><%= count++%></th>
+                        <td>${S.code}</td>
+                        <td>${S.displayName}</td>
+                        <td><img width="100px" src="images/${S.imageUrl}" alt="image Student"/></td>
+                    </tr>    
+                </c:forEach>
+            </tbody>
+        </table>
+        <script type="text/javascript">
+        </script>
     </body>
 </html>
